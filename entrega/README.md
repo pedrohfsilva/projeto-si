@@ -19,15 +19,17 @@ Data de entrega: **06/07/2026** (Moodle)
 - **Empresa-cliente**: PolymerForge 3D (autopeças plásticas sob demanda, São Carlos/SP)
 - **Solução proposta**: **PolyLink** — Plataforma de Integração e Rastreabilidade da Cadeia de Abastecimento
 
-## Conteúdo desta pasta
+## Conteúdo da entrega
 
-| Arquivo | O que é |
+| Arquivo/Pasta | O que é |
 |---|---|
 | `texto_sistematizado.docx` | Texto sistematizado (50% da nota) — Times New Roman 12pt |
-| `prototipo/` | Protótipo funcional em Next.js (30% da nota) — dados mockados |
+| `texto_sistematizado.pdf` | Versão em PDF do texto |
 | `infografico.pdf` | Infográfico da solução (10% da nota) |
 | `infografico.png` | Mesmo infográfico como imagem (para upload rápido) |
 | `infografico.html` | Fonte editável do infográfico |
+
+O código do **protótipo funcional** em Next.js (30% da nota) encontra-se na pasta `prototipo/`, localizada na raiz deste repositório.
 
 O item **Tema/Cenário** (10% da nota) foi entregue anteriormente à parte, conforme
 combinado com o professor.
@@ -35,7 +37,7 @@ combinado com o professor.
 ## Executando o protótipo
 
 ```bash
-cd prototipo
+cd ../prototipo
 npm install
 npm run dev
 ```

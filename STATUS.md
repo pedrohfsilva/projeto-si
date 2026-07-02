@@ -19,10 +19,12 @@ projeto-si/
 ├── entrega/                          ← TUDO QUE VAI PARA O MOODLE (~2,7 MB)
 │   ├── README.md                     Índice + grupo + declaração de IA
 │   ├── texto_sistematizado.docx      50% da nota — pronto
+│   ├── texto_sistematizado.pdf       50% da nota — pronto (versão em PDF)
 │   ├── infografico.pdf               10% da nota — pronto (1 página)
 │   ├── infografico.png               Mesmo infográfico, imagem
-│   ├── infografico.html              Fonte editável do infográfico
-│   └── prototipo/                    30% da nota — Next.js, pronto
+│   └── infografico.html              Fonte editável do infográfico
+│
+├── prototipo/                        ← 30% da nota — Next.js, pronto
 │                                     (node_modules foi removido para
 │                                      manter a entrega leve; roda com
 │                                      npm install && npm run dev)

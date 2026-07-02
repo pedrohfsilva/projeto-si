@@ -7,13 +7,15 @@ está na pasta [`entrega/`](./entrega/README.md).**
 
 ```
 projeto-si/
-├── entrega/                          # <-- ISSO é o que vai para o Moodle
+├── entrega/                          # <-- Arquivos do trabalho escrito
 │   ├── README.md                     # Índice da entrega
 │   ├── texto_sistematizado.docx      # Texto (50%)
-│   ├── prototipo/                    # Protótipo em Next.js (30%)
+│   ├── texto_sistematizado.pdf       # Versão em PDF do texto
 │   ├── infografico.pdf               # Infográfico (10%)
 │   ├── infografico.png               # Versão em imagem
 │   └── infografico.html              # Fonte do infográfico
+│
+├── prototipo/                        # Protótipo em Next.js (30%)
 │
 ├── suporte/                          # Scripts e utilitários de suporte
 │   ├── gerar_texto_sistematizado.py  # Gera o .docx a partir do conteúdo
