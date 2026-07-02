@@ -1,7 +1,7 @@
 # Status do trabalho — Projeto SSC0120 (PolymerForge 3D / PolyLink)
 
 > Snapshot do que está pronto, onde está e o que falta.
-> Atualizado em: **2026-07-01**.
+> Atualizado em: **2026-07-02**.
 
 ---
 
@@ -47,8 +47,8 @@ projeto-si/
 | Tema/cenário | 10% | — (entregue antes, ignorado) | ✅ fora do escopo desta execução |
 | Texto sistematizado | 50% | `entrega/texto_sistematizado.docx` | ✅ pronto — TNR 12pt, ~15 pgs de conteúdo |
 | Protótipo | 30% | `entrega/prototipo/` | ✅ pronto — Next.js, 8 telas, build passa |
-| Infográfico | 10% | `entrega/infografico.pdf` + `.png` + `.html` | ✅ pronto — 1 página |
-| Declaração de uso de IA | — | seção 5 do docx + rodapé do infográfico + README | ✅ pronto |
+| Infográfico | 10% | `entrega/infografico.pdf` + `.png` + `.html` | ✅ pronto — 1 página, design minimalista |
+| Declaração de uso de IA | — | seção 5 do docx + README | ✅ pronto (exigida pela descrição do trabalho) |
 
 ### Detalhes do texto sistematizado (`entrega/texto_sistematizado.docx`)
 
@@ -91,8 +91,11 @@ Contagem: 4.559 palavras → ~15 pgs de conteúdo (dentro do intervalo 10–15).
 ### Detalhes do infográfico
 
 - Arquivo-fonte editável: `entrega/infografico.html`.
-- Dimensões: 1080×2100 px (proporção de página única alta).
-- Regerar PDF/PNG:
+- Design: minimalista, fundo claro, um único acento azul, conteúdo resumido
+  (1 página). **Não** contém a declaração de uso de IA — ela está no texto e no
+  README, que é onde a descrição do trabalho exige.
+- Dimensões: 1080×1589 px (altura ajustada ao conteúdo, sem espaço sobrando).
+- Regerar PDF/PNG (macOS, com Google Chrome instalado):
   ```bash
   cd suporte/pdf-tool
   npm install --registry=https://registry.npmjs.org/
@@ -102,7 +105,9 @@ Contagem: 4.559 palavras → ~15 pgs de conteúdo (dentro do intervalo 10–15).
 
 ## 4. Declaração de uso de IA (para não esquecer)
 
-Escrita no texto e no infográfico, resumida:
+Escrita no texto (seção 5 do docx) e no README da entrega. **Removida do
+infográfico** (decisão de design; a declaração continua presente onde a
+descrição do trabalho a exige). Resumida:
 
 - **Protótipo:** Claude Code foi usado para codificar o Next.js a partir das telas e funcionalidades **definidas pelo grupo**.
 - **Revisão de texto:** Claude Code refinou clareza e coesão dos textos **redigidos pelos integrantes**, sem alterar ideias.
