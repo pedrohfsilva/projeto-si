@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>PolyLink — Infográfico</title>
+    <meta name="viewport" content="width=1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: 1080px 2100px;
+        margin: 0;
+      }
+      html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      :root {
+        --bg: #050914;
+        --bg-2: #0b1330;
+        --card: #0f1a3b;
+        --card-2: #14224a;
+        --border: #22335e;
+        --text: #e6ecff;
+        --muted: #94a3c7;
+        --brand: #598cff;
+        --brand-2: #8ab4ff;
+        --accent: #22d3ee;
+        --success: #34d399;
+        --warn: #fbbf24;
+        --danger: #f87171;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--bg); }
+      body {
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+        color: var(--text);
+      }
+      .page {
+        width: 1080px;
+        min-height: 2100px;
+        margin: 0 auto;
+        padding: 56px 60px 60px;
+        background:
+          radial-gradient(1200px 500px at 90% -10%, rgba(52,101,255,.35) 0%, rgba(52,101,255,0) 60%),
+          radial-gradient(900px 400px at -10% 30%, rgba(34,211,238,.20) 0%, rgba(34,211,238,0) 60%),
+          linear-gradient(180deg, #060b1d 0%, #030614 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .grid-bg {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(1000px 800px at 50% 30%, black 40%, transparent 80%);
+        pointer-events: none;
+      }
+      header {
+        position: relative;
+        display: flex; align-items: flex-start; justify-content: space-between;
+        gap: 32px;
+      }
+      .brand {
+        display: flex; align-items: center; gap: 14px;
+      }
+      .logo {
+        width: 54px; height: 54px; border-radius: 14px;
+        background: linear-gradient(135deg, #3465ff 0%, #22d3ee 100%);
+        box-shadow: 0 12px 28px rgba(52,101,255,.35);
+        display: grid; place-content: center;
+        font-family: "Space Grotesk"; font-weight: 800; font-size: 22px;
+        color: white;
+      }
+      .brand-name {
+        font-family: "Space Grotesk"; font-weight: 700;
+        font-size: 24px; letter-spacing: -0.02em;
+      }
+      .brand-sub { font-size: 12px; color: var(--muted); }
+
+      .meta {
+        text-align: right; font-size: 11px; color: var(--muted); line-height: 1.5;
+      }
+      .meta strong { color: #e6ecff; font-weight: 600; }
+
+      h1 {
+        position: relative;
+        font-family: "Space Grotesk";
+        font-size: 54px; line-height: 1.02; letter-spacing: -0.03em;
+        margin: 28px 0 12px; font-weight: 700;
+      }
+      h1 .accent { color: transparent; -webkit-background-clip: text; background-clip: text;
+        background-image: linear-gradient(90deg, #8ab4ff 0%, #22d3ee 100%); }
+      h2 {
+        font-family: "Space Grotesk"; font-weight: 700;
+        font-size: 22px; margin: 0 0 12px; letter-spacing: -0.01em;
+      }
+      .lead {
+        position: relative;
+        font-size: 16px; color: #c3cdf0; max-width: 780px; line-height: 1.5;
+      }
+
+      .kpi-row {
+        position: relative;
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        gap: 14px; margin: 28px 0 22px;
+      }
+      .kpi {
+        background: linear-gradient(180deg, rgba(20,34,74,.9) 0%, rgba(15,26,59,.9) 100%);
+        border: 1px solid var(--border);
+        border-radius: 16px; padding: 16px 18px;
+        position: relative; overflow: hidden;
+      }
+      .kpi::before {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(200px 120px at 90% -20%, rgba(52,101,255,.25) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .kpi .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+      .kpi .value { font-family: "Space Grotesk"; font-size: 32px; font-weight: 700; margin-top: 6px; letter-spacing: -0.02em; }
+      .kpi .delta { font-size: 11px; color: var(--success); margin-top: 4px; font-weight: 500; }
+      .kpi .delta.bad { color: var(--danger); }
+
+      .band {
+        position: relative;
+        display: grid; grid-template-columns: 1.05fr 1fr;
+        gap: 18px; margin-top: 6px;
+      }
+      .card {
+        background: linear-gradient(180deg, rgba(15,26,59,.9) 0%, rgba(11,19,48,.9) 100%);
+        border: 1px solid var(--border);
+        border-radius: 18px; padding: 20px 22px;
+        position: relative;
+      }
+      .card .tag {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-size: 11px; color: #a8b8e4;
+        background: rgba(52,101,255,.15);
+        border: 1px solid rgba(52,101,255,.25);
+        border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
+        font-weight: 500;
+      }
+      .card p { font-size: 13.5px; color: #c3cdf0; line-height: 1.55; margin: 0; }
+      .card ul { padding-left: 18px; margin: 8px 0 0; }
+      .card li { font-size: 13.2px; color: #c3cdf0; line-height: 1.55; margin-bottom: 6px; }
+
+      .problema {
+        background: linear-gradient(180deg, rgba(60,20,45,.6) 0%, rgba(43,14,32,.7) 100%);
+        border-color: rgba(248,113,113,.28);
+      }
+      .problema .tag { background: rgba(248,113,113,.15); border-color: rgba(248,113,113,.3); color: #fecaca; }
+      .problema h2 { color: #ffe4e6; }
+
+      .impacts {
+        margin-top: 14px;
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+      }
+      .impacts .chip {
+        border: 1px solid rgba(248,113,113,.25);
+        background: rgba(248,113,113,.08);
+        border-radius: 12px; padding: 10px 12px;
+        font-size: 11.5px; color: #fecaca; line-height: 1.35;
+      }
+      .impacts .chip b { display: block; font-family: "Space Grotesk"; font-size: 20px; color: #fff; letter-spacing: -0.02em; }
+
+      .flow {
+        position: relative; margin-top: 26px;
+        background:
+          linear-gradient(180deg, rgba(15,26,59,.95) 0%, rgba(9,15,35,.95) 100%);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 22px 24px 26px;
+      }
+      .flow h2 { margin-bottom: 4px; }
+      .flow .subtitle { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+
+      .flow-grid {
+        display: grid; grid-template-columns: repeat(5, 1fr);
+        gap: 12px; align-items: stretch;
+        position: relative;
+      }
+      .flow-step {
+        border: 1px solid var(--border);
+        background: rgba(52,101,255,.06);
+        border-radius: 14px; padding: 14px 14px 16px;
+        display: flex; flex-direction: column; gap: 8px;
+        position: relative;
+      }
+      .flow-step .num {
+        width: 28px; height: 28px; border-radius: 9px;
+        background: linear-gradient(135deg, #3465ff 0%, #22d3ee 100%);
+        color: #fff; font-family: "Space Grotesk"; font-weight: 700;
+        display: grid; place-content: center; font-size: 13px;
+      }
+      .flow-step h3 { font-size: 13px; margin: 0; letter-spacing: -0.01em; }
+      .flow-step p { margin: 0; font-size: 11.5px; color: #b8c5ea; line-height: 1.45; }
+
+      .flow-step::after {
+        content: "→"; position: absolute; right: -12px; top: 20px;
+        color: rgba(255,255,255,.35); font-size: 18px;
+      }
+      .flow-step:last-child::after { display: none; }
+
+      .duo {
+        margin-top: 24px;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+      }
+      .duo .card h2 { font-size: 18px; }
+      .modules {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;
+      }
+      .modules .mod {
+        border: 1px solid var(--border); border-radius: 10px;
+        padding: 10px 12px; background: rgba(255,255,255,.02);
+      }
+      .mod b { font-size: 12.5px; }
+      .mod span { display: block; font-size: 11.5px; color: #a8b8e4; line-height: 1.4; margin-top: 3px; }
+
+      .value-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+      .value-list .row {
+        display: grid; grid-template-columns: 92px 1fr auto; gap: 12px; align-items: center;
+        border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px;
+        background: rgba(255,255,255,.02);
+      }
+      .value-list .row .k { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+      .value-list .row .v { font-size: 12.5px; color: #dbe4ff; line-height: 1.4; }
+      .value-list .row .g {
+        font-family: "Space Grotesk"; font-size: 15px; font-weight: 700; color: var(--success);
+        white-space: nowrap;
+      }
+
+      footer {
+        margin-top: 26px;
+        display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px;
+      }
+      .credits {
+        border: 1px solid var(--border); border-radius: 16px;
+        padding: 16px 18px; background: rgba(11,19,48,.7);
+      }
+      .credits h3 { margin: 0 0 8px; font-size: 13px; font-family: "Space Grotesk"; letter-spacing: -0.01em; }
+      .credits .team { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 11.5px; color: #b6c1e7; }
+
+      .badge-strip {
+        border: 1px solid var(--border); border-radius: 16px;
+        padding: 16px 18px; background: rgba(11,19,48,.7);
+        display: flex; flex-direction: column; gap: 8px;
+      }
+      .badge-strip h3 { margin: 0 0 4px; font-size: 13px; font-family: "Space Grotesk"; }
+      .badge-strip p { font-size: 11.5px; color: #b6c1e7; margin: 0; line-height: 1.5; }
+      .badge-strip .row { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: #dbe4ff; }
+      .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--success); box-shadow: 0 0 0 4px rgba(52,211,153,.15); }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="grid-bg"></div>
+
+      <header>
+        <div class="brand">
+          <div class="logo">PL</div>
+          <div>
+            <div class="brand-name">PolyLink</div>
+            <div class="brand-sub">Plataforma de Integração & Rastreabilidade</div>
+          </div>
+        </div>
+        <div class="meta">
+          <div><strong>SSC0120 — Sistemas de Informação</strong></div>
+          <div>ICMC — Universidade de São Paulo</div>
+          <div>Empresa-cliente: <strong>PolymerForge 3D</strong></div>
+          <div>Julho de 2026</div>
+        </div>
+      </header>
+
+      <h1>
+        Quando a linha para,<br />
+        <span class="accent">a promessa quebra.</span>
+      </h1>
+      <p class="lead">
+        A PolymerForge 3D fabrica autopeças plásticas sob demanda em 48 h com
+        modelo just-in-time radical: sem estoques, sem margem para falhar. As
+        integrações frágeis com fornecedores estão comprometendo esse
+        diferencial. O PolyLink cria a camada de integridade que devolve à
+        cadeia a confiabilidade que sempre foi sua marca.
+      </p>
+
+      <section class="kpi-row">
+        <div class="kpi">
+          <div class="label">Entrega no prazo</div>
+          <div class="value">71% → 94%</div>
+          <div class="delta">+23 p.p. em 2 trimestres</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Paralisações de linha</div>
+          <div class="value">2,3 → 0,4/mês</div>
+          <div class="delta">−83% em rupturas</div>
+        </div>
+        <div class="kpi">
+          <div class="label">MTTR de integração</div>
+          <div class="value">6 h → 22 min</div>
+          <div class="delta">rastreabilidade fim-a-fim</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Falhas silenciosas</div>
+          <div class="value">0 propagadas</div>
+          <div class="delta">100% notificadas em ≤30 min</div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="card problema">
+          <span class="tag">● Diagnóstico</span>
+          <h2>O problema em uma frase</h2>
+          <p>
+            A cada pedido, o ERP dispara uma compra automática de polímero para
+            uma das quatro APIs de fornecedores homologados. Um <b>HTTP 200</b> é
+            interpretado como sucesso — mas frequentemente o pedido nunca entrou
+            na fila do fornecedor. A linha é programada, o insumo não chega, o
+            cliente descobre o atraso.
+          </p>
+          <ul>
+            <li>Integrações heterogêneas, sem contrato de nível de serviço.</li>
+            <li>Sem confirmação assíncrona: o ERP acredita, não verifica.</li>
+            <li>Logs mínimos: cada investigação é manual e demorada.</li>
+            <li>Portal B2B exibe estado presumido, não estado real.</li>
+          </ul>
+          <div class="impacts">
+            <div class="chip"><b>2,3/mês</b>paralisações não planejadas de linha</div>
+            <div class="chip"><b>14 h</b>duração média de cada ruptura</div>
+            <div class="chip"><b>3 clientes</b>com cláusula de penalidade acionada</div>
+            <div class="chip"><b>Campinas</b>expansão adiada até restaurar confiabilidade</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag">◆ Nossa proposta</span>
+          <h2>PolyLink em uma frase</h2>
+          <p>
+            Camada de <b>integração ativa e rastreabilidade fim-a-fim</b> entre o
+            IndustriaOS e os fornecedores. Não confia em código de retorno:
+            <b>confirma, registra, roteia e alerta</b>. Transforma cada pedido em
+            uma transação auditável, com decisões automáticas suportadas por
+            indicadores de confiabilidade em tempo real.
+          </p>
+
+          <div class="modules">
+            <div class="mod">
+              <b>Adapters versionados</b>
+              <span>API padronizada interna que isola o ERP das mudanças de cada fornecedor.</span>
+            </div>
+            <div class="mod">
+              <b>Confirmação assíncrona</b>
+              <span>Callback ou polling; nada avança sem verificação real.</span>
+            </div>
+            <div class="mod">
+              <b>Health score</b>
+              <span>Confiabilidade contínua por fornecedor, com histórico e SLA.</span>
+            </div>
+            <div class="mod">
+              <b>Roteamento inteligente</b>
+              <span>Fallback automático para o fornecedor com maior score.</span>
+            </div>
+            <div class="mod">
+              <b>Auditoria completa</b>
+              <span>Payloads, cabeçalhos e retentativas preservados por 12 meses.</span>
+            </div>
+            <div class="mod">
+              <b>Alertas com escalação</b>
+              <span>P1 em Slack, e-mail e SMS em menos de 1 minuto.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow">
+        <h2>Ciclo de vida de um pedido no PolyLink</h2>
+        <div class="subtitle">Do envio ao cliente final — cada etapa é validada, registrada e reversível.</div>
+
+        <div class="flow-grid">
+          <div class="flow-step">
+            <div class="num">1</div>
+            <h3>Envio traduzido</h3>
+            <p>Adapter converte o contrato interno para o formato do fornecedor selecionado pelo health score.</p>
+          </div>
+          <div class="flow-step">
+            <div class="num">2</div>
+            <h3>Verificação ativa</h3>
+            <p>Aguarda callback ou executa polling. HTTP 200 sem número de rastreio dispara reprocessamento.</p>
+          </div>
+          <div class="flow-step">
+            <div class="num">3</div>
+            <h3>Rastro completo</h3>
+            <p>Cada evento — request, response, retry, callback — é gravado com correlation ID e payload.</p>
+          </div>
+          <div class="flow-step">
+            <div class="num">4</div>
+            <h3>Decisão automática</h3>
+            <p>Score cai abaixo do limite? Reroteamento para o próximo fornecedor homologado, sem intervenção humana.</p>
+          </div>
+          <div class="flow-step">
+            <div class="num">5</div>
+            <h3>Cliente informado</h3>
+            <p>Portal B2B reflete o estado real e notifica proativamente qualquer mudança de fornecedor ou prazo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="duo">
+        <div class="card">
+          <span class="tag">✦ Cadeia de valor</span>
+          <h2>Onde o valor é criado</h2>
+          <div class="value-list">
+            <div class="row">
+              <div class="k">Compras</div>
+              <div class="v">Reativo → proativo, com score objetivo por fornecedor</div>
+              <div class="g">−42% revisões manuais</div>
+            </div>
+            <div class="row">
+              <div class="k">Produção</div>
+              <div class="v">Máquina só é agendada após confirmação real do insumo</div>
+              <div class="g">−83% paradas</div>
+            </div>
+            <div class="row">
+              <div class="k">Cliente</div>
+              <div class="v">Portal B2B mostra a verdade, não o presumido</div>
+              <div class="g">NPS +21 pts</div>
+            </div>
+            <div class="row">
+              <div class="k">TI</div>
+              <div class="v">Debug em minutos via linha do tempo unificada</div>
+              <div class="g">MTTR 6h → 22min</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag">⚡ Vantagem competitiva</span>
+          <h2>Por que difícil de imitar</h2>
+          <p>
+            O PolyLink não é apenas software: é a combinação de
+            <b>middleware de integração</b>, <b>processo de compras</b> e
+            <b>ativo de dados de confiabilidade</b> que se acumula ao longo do
+            tempo. Concorrentes podem copiar telas, mas não copiam o histórico
+            de decisões e as regras aprendidas.
+          </p>
+          <ul>
+            <li>Restaura a promessa comercial de 48 h em ciclos de meses, não anos.</li>
+            <li>Inverte a assimetria com fornecedores: <b>a PolymerForge mede</b>.</li>
+            <li>Viabiliza a expansão para a segunda fábrica de Campinas.</li>
+            <li>Habilita, no futuro, modelos preditivos de risco por rota.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <div class="credits">
+          <h3>Grupo</h3>
+          <div class="team">
+            <span>Pedro Henrique Ferreira Silva — 14677526</span>
+            <span>Enzo Tonon Morente — 14568476</span>
+            <span>Miller Matheus Lima Anacleto Rocha — 13727954</span>
+            <span>Ayrton da Costa Ganen Filho — 14560190</span>
+            <span>Matheus Rodrigues de Oliveira — 16822535</span>
+            <span style="color:#7f8dbe">SSC0120 · ICMC-USP · 2026</span>
+          </div>
+        </div>
+        <div class="badge-strip">
+          <h3>Transparência sobre uso de IA</h3>
+          <p>
+            A ferramenta <b>Claude Code</b> apoiou a codificação do protótipo em
+            Next.js, a partir das telas definidas pelo grupo, e a revisão dos
+            textos redigidos pelos integrantes. Concepção, escopo e decisões de
+            projeto foram do grupo.
+          </p>
+          <div class="row"><span class="dot"></span> Protótipo funcional em <b>/prototipo</b></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
