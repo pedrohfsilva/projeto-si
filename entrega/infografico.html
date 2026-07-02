@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>PolyLink — Infográfico</title>
+    <title>PolyLink · Infográfico</title>
     <meta name="viewport" content="width=1080" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <style>
-      @page { size: 1080px 1589px; margin: 0; }
+      @page { size: 1080px 1842px; margin: 0; }
       html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
       :root {
@@ -74,15 +74,20 @@
       }
 
       /* ---------- KPIs ---------- */
+      .kpi-cap {
+        margin: 40px 0 10px; font-size: 12.5px; font-weight: 600;
+        letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+      }
       .kpis {
         display: grid; grid-template-columns: repeat(4, 1fr);
-        gap: 0; margin: 40px 0 8px;
+        gap: 0; margin: 0 0 8px;
         border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
       }
       .kpi { padding: 22px 24px; border-right: 1px solid var(--line); }
       .kpi:last-child { border-right: none; }
       .kpi .value { font-family: "Space Grotesk"; font-weight: 700; font-size: 30px; letter-spacing: -0.02em; }
-      .kpi .value .to { color: var(--brand); }
+      .kpi .value .down { color: var(--danger); }
+      .kpi .value .unit { font-size: 18px; color: var(--muted); font-weight: 600; }
       .kpi .label { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 
       /* ---------- Section title ---------- */
@@ -111,7 +116,7 @@
         padding-left: 20px; position: relative; margin-bottom: 8px;
       }
       .card li:last-child { margin-bottom: 0; }
-      .card.problem li::before { content: "—"; position: absolute; left: 0; color: var(--danger); }
+      .card.problem li::before { content: "•"; position: absolute; left: 0; color: var(--danger); }
       .card.solution li::before { content: "→"; position: absolute; left: 0; color: var(--brand); font-weight: 600; }
 
       /* ---------- Flow ---------- */
@@ -138,8 +143,18 @@
       .value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
       .vcard { border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
       .vcard .k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-      .vcard .g { font-family: "Space Grotesk"; font-weight: 700; font-size: 26px; color: var(--brand); margin: 8px 0 6px; letter-spacing: -0.02em; }
+      .vcard .vt { font-family: "Space Grotesk"; font-weight: 600; font-size: 16px; color: var(--brand); margin: 10px 0 6px; letter-spacing: -0.01em; }
       .vcard .d { font-size: 12.5px; color: #475569; line-height: 1.45; }
+
+      /* ---------- Positioning (ERP / SCM / PolyLink) ---------- */
+      .posit { margin-top: 48px; }
+      .posit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .pcard { border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+      .pcard.hl { border-color: #d6e2ff; background: var(--brand-soft); }
+      .pcard .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+      .pcard h3 { font-family: "Space Grotesk"; font-weight: 600; font-size: 16px; margin: 8px 0 6px; letter-spacing: -0.01em; }
+      .pcard.hl h3 { color: var(--brand); }
+      .pcard p { font-size: 12.5px; color: #475569; line-height: 1.5; margin: 0; }
 
       /* ---------- Footer ---------- */
       footer {
@@ -163,7 +178,7 @@
           </div>
         </div>
         <div class="meta">
-          <div><strong>SSC0120 — Sistemas de Informação</strong></div>
+          <div><strong>SSC0120 · Sistemas de Informação</strong></div>
           <div>ICMC · Universidade de São Paulo</div>
           <div>Empresa-cliente: <strong>PolymerForge 3D</strong></div>
         </div>
@@ -174,27 +189,28 @@
         <p class="lead">
           A PolymerForge 3D entrega autopeças plásticas sob demanda em 48 h, sem estoque.
           Integrações frágeis com fornecedores geram falhas silenciosas que travam a linha.
-          O <strong>PolyLink</strong> confirma, registra, roteia e alerta cada pedido — devolvendo
+          O <strong>PolyLink</strong> confirma, registra, roteia e alerta cada pedido, devolvendo
           confiabilidade à cadeia.
         </p>
       </section>
 
+      <div class="kpi-cap">A situação hoje · números do caso PolymerForge 3D</div>
       <section class="kpis">
         <div class="kpi">
-          <div class="value">71 <span class="to">→ 94%</span></div>
-          <div class="label">Entrega no prazo</div>
+          <div class="value">94% <span class="down">→ 71%</span></div>
+          <div class="label">Entrega no prazo caiu (2022 → 2024)</div>
         </div>
         <div class="kpi">
-          <div class="value">−83%</div>
-          <div class="label">Paralisações de linha</div>
+          <div class="value">2,3<span class="unit">/mês</span></div>
+          <div class="label">Paralisações não planejadas de linha (2024)</div>
         </div>
         <div class="kpi">
-          <div class="value">6 h <span class="to">→ 22 min</span></div>
-          <div class="label">Tempo de diagnóstico</div>
+          <div class="value">14 h</div>
+          <div class="label">Duração média de cada parada</div>
         </div>
         <div class="kpi">
-          <div class="value">0</div>
-          <div class="label">Falhas silenciosas propagadas</div>
+          <div class="value">3</div>
+          <div class="label">clientes acionaram cláusula de penalidade</div>
         </div>
       </section>
 
@@ -202,7 +218,7 @@
         <div class="card problem">
           <h2>O problema</h2>
           <p>
-            O ERP dispara a compra do polímero e interpreta um <b>HTTP 200</b> como sucesso —
+            O ERP dispara a compra do polímero e interpreta um <b>HTTP 200</b> como sucesso,
             mas o pedido muitas vezes nunca entra na fila do fornecedor. A linha é agendada,
             o insumo não chega, o cliente descobre o atraso.
           </p>
@@ -224,6 +240,27 @@
             <li>Health score e roteamento automático por fornecedor.</li>
             <li>Auditoria completa e alertas com escalação.</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="posit">
+        <div class="sec-title"><span class="bar"></span> ERP, SCM e onde entra o PolyLink</div>
+        <div class="posit-grid">
+          <div class="pcard">
+            <div class="kicker">ERP · IndustriaOS (já existe)</div>
+            <h3>Gestão interna</h3>
+            <p>Registra pedidos, planeja a produção e controla materiais. Olha para dentro da empresa.</p>
+          </div>
+          <div class="pcard">
+            <div class="kicker">SCM · Cadeia de suprimentos</div>
+            <h3>Fluxo com fornecedores</h3>
+            <p>Compras, visibilidade e coordenação com quem está fora. Hoje é uma lacuna na empresa.</p>
+          </div>
+          <div class="pcard hl">
+            <div class="kicker">PolyLink · a proposta</div>
+            <h3>A camada de SCM que faltava</h3>
+            <p>Confirma, rastreia e roteia o abastecimento no elo com fornecedores, sem substituir o ERP.</p>
+          </div>
         </div>
       </section>
 
@@ -259,27 +296,27 @@
       </section>
 
       <section class="value">
-        <div class="sec-title"><span class="bar"></span> Onde o valor é criado</div>
+        <div class="sec-title"><span class="bar"></span> O que a solução muda (benefícios esperados)</div>
         <div class="value-grid">
           <div class="vcard">
             <div class="k">Compras</div>
-            <div class="g">−42%</div>
-            <div class="d">revisões manuais, com score objetivo por fornecedor</div>
+            <div class="vt">Decisão com base em dados</div>
+            <div class="d">Um score objetivo por fornecedor no lugar da escolha informal.</div>
           </div>
           <div class="vcard">
             <div class="k">Produção</div>
-            <div class="g">−83%</div>
-            <div class="d">paradas: a máquina só é agendada após confirmação real</div>
+            <div class="vt">Menos paradas de linha</div>
+            <div class="d">A máquina só é agendada após a confirmação real do insumo.</div>
           </div>
           <div class="vcard">
             <div class="k">Cliente</div>
-            <div class="g">+21</div>
-            <div class="d">pontos de NPS: o portal mostra a verdade, não o presumido</div>
+            <div class="vt">Informação verdadeira</div>
+            <div class="d">O portal mostra o estado real e avisa mudanças de forma proativa.</div>
           </div>
           <div class="vcard">
             <div class="k">TI</div>
-            <div class="g">22 min</div>
-            <div class="d">de diagnóstico via linha do tempo unificada (antes 6 h)</div>
+            <div class="vt">Diagnóstico rápido</div>
+            <div class="d">De investigação manual e demorada para uma linha do tempo única.</div>
           </div>
         </div>
       </section>

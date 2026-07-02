@@ -147,7 +147,7 @@ def build_document() -> Document:
         space_after=4, line_spacing=1.15,
     )
     add_paragraph(
-        doc, "SSC0120 — Sistemas de Informação",
+        doc, "SSC0120: Sistemas de Informação",
         size=12, bold=True,
         alignment=WD_ALIGN_PARAGRAPH.CENTER,
         space_after=100, line_spacing=1.15,
@@ -173,11 +173,11 @@ def build_document() -> Document:
         space_after=4, line_spacing=1.15,
     )
     integrantes = [
-        "Pedro Henrique Ferreira Silva — NUSP 14677526",
-        "Enzo Tonon Morente — NUSP 14568476",
-        "Miller Matheus Lima Anacleto Rocha — NUSP 13727954",
-        "Ayrton da Costa Ganen Filho — NUSP 14560190",
-        "Matheus Rodrigues de Oliveira — NUSP 16822535",
+        "Pedro Henrique Ferreira Silva (NUSP 14677526)",
+        "Enzo Tonon Morente (NUSP 14568476)",
+        "Miller Matheus Lima Anacleto Rocha (NUSP 13727954)",
+        "Ayrton da Costa Ganen Filho (NUSP 14560190)",
+        "Matheus Rodrigues de Oliveira (NUSP 16822535)",
     ]
     for nome in integrantes:
         add_paragraph(
@@ -206,22 +206,22 @@ def build_document() -> Document:
         ("1. Introdução", "3"),
         ("   1.1 Contextualização do problema", "3"),
         ("   1.2 Motivação e justificativa", "4"),
-        ("   1.3 Soluções existentes", "5"),
+        ("   1.3 Soluções existentes", "4"),
         ("2. Solução Proposta", "6"),
         ("   2.1 Funcionalidades", "6"),
         ("   2.2 Questões técnicas", "7"),
         ("   2.3 Questões organizacionais", "8"),
         ("   2.4 Questões humanas", "9"),
         ("   2.5 Processos de negócio", "10"),
-        ("3. Processamento da Informação", "11"),
-        ("   3.1 Dados de entrada", "11"),
-        ("   3.2 Processamento", "11"),
-        ("   3.3 Informações geradas", "12"),
-        ("4. Valor Organizacional e Vantagem Competitiva", "13"),
-        ("   4.1 Cadeia de valor", "13"),
+        ("3. Processamento da Informação", "12"),
+        ("   3.1 Dados de entrada", "12"),
+        ("   3.2 Processamento", "12"),
+        ("   3.3 Informações geradas", "13"),
+        ("4. Valor Organizacional e Vantagem Competitiva", "14"),
+        ("   4.1 Cadeia de valor", "14"),
         ("   4.2 Vantagem competitiva", "14"),
-        ("5. Uso de Ferramentas de Inteligência Artificial", "14"),
-        ("6. Referências Bibliográficas", "15"),
+        ("5. Uso de Ferramentas de Inteligência Artificial", "15"),
+        ("6. Referências Bibliográficas", "17"),
     ]
     for titulo, pagina in sumario:
         p = doc.add_paragraph()
@@ -249,8 +249,8 @@ def build_document() -> Document:
         "automotivo. O modelo de negócio da empresa é disruptivo em dois "
         "eixos simultâneos. Primeiro, todas as peças são produzidas em "
         "impressão 3D industrial (FDM e SLS), o que permite atender "
-        "encomendas de baixo volume — incluindo peças descontinuadas por "
-        "montadoras — sem os custos de ferramentaria da injeção "
+        "encomendas de baixo volume, incluindo peças descontinuadas por "
+        "montadoras, sem os custos de ferramentaria da injeção "
         "tradicional. Segundo, a operação trabalha em regime just-in-time "
         "radical: não existe estoque intermediário de polímeros; a "
         "matéria-prima é adquirida automaticamente após a confirmação de "
@@ -261,12 +261,12 @@ def build_document() -> Document:
     )
     add_paragraph(
         doc,
-        "A promessa comercial vendida aos clientes — montadoras, oficinas "
-        "especializadas e retíficas — é a de entregar a peça em 48 horas "
+        "A promessa comercial vendida aos clientes (montadoras, oficinas "
+        "especializadas e retíficas) é a de entregar a peça em 48 horas "
         "após a aprovação do orçamento, sem exigência de pedido mínimo. "
         "Esse compromisso faz com que a organização dependa, de maneira "
         "crítica, do bom funcionamento das integrações com fornecedores "
-        "de polímeros. Atualmente, a espinha dorsal tecnológica da "
+        "de polímeros. Atualmente, a base tecnológica da "
         "PolymerForge é composta por três camadas: um ERP próprio, "
         "chamado IndustriaOS, que orquestra pedidos, materiais e "
         "planejamento de produção; um Portal B2B por meio do qual os "
@@ -279,16 +279,16 @@ def build_document() -> Document:
     )
     add_paragraph(
         doc,
-        "O problema selecionado pelo grupo, após análise do dossiê de "
+        "O problema selecionado pelo grupo, após análise do material de "
         "contexto da empresa e discussão do cenário, possui escopo "
         "cuidadosamente delimitado: trata-se das falhas silenciosas e da "
         "ausência de rastreabilidade nas integrações com fornecedores de "
         "matéria-prima. Não se pretende resolver, neste trabalho, as "
         "diversas outras frentes de melhoria possíveis na PolymerForge "
-        "— como marketing digital, chão de fábrica ou onboarding de "
-        "novos clientes —, pois a bibliografia de Sistemas de Informação "
-        "alerta contra propostas amplas demais que perdem foco e valor "
-        "de negócio. O recorte escolhido é, ao mesmo tempo, o de maior "
+        "(como marketing digital, chão de fábrica ou onboarding de "
+        "novos clientes), a fim de preservar o foco e o valor de "
+        "negócio e evitar uma proposta ampla demais, que acabaria "
+        "dispersa e sem resultado prático. O recorte escolhido é o de maior "
         "impacto financeiro imediato e aquele em que uma solução apoiada "
         "em Sistemas de Informação pode oferecer resultados mensuráveis "
         "em poucos ciclos de operação.",
@@ -300,7 +300,7 @@ def build_document() -> Document:
     add_paragraph(
         doc,
         "O problema merece atenção porque afeta diretamente o principal "
-        "argumento de venda da PolymerForge — o prazo de 48 horas. As "
+        "argumento de venda da PolymerForge: o prazo de 48 horas. As "
         "APIs dos quatro fornecedores homologados foram desenvolvidas de "
         "forma independente, sem contratos de nível de serviço "
         "formalizados e com ciclos de atualização imprevisíveis. Quando "
@@ -319,7 +319,7 @@ def build_document() -> Document:
     )
     add_paragraph(
         doc,
-        "Os impactos são mensuráveis. Segundo o dossiê de contexto da "
+        "Os impactos são mensuráveis. Segundo o material de contexto da "
         "empresa, a taxa de entrega no prazo caiu de 94% em 2022 para "
         "71% no primeiro semestre de 2024; foram observadas, em média, "
         "2,3 paralisações não planejadas de linha por mês, com duração "
@@ -390,7 +390,7 @@ def build_document() -> Document:
         "uma indústria com apenas quatro fornecedores críticos e "
         "engessam a autonomia de configuração. Soluções verticais de "
         "supply chain, por sua vez, foram desenhadas para operações com "
-        "estoque de segurança — premissa que não se aplica ao just-in-time "
+        "estoque de segurança, premissa que não se aplica ao just-in-time "
         "radical praticado pela empresa.",
         alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
         first_line_indent=Cm(1.25),
@@ -419,13 +419,58 @@ def build_document() -> Document:
     # =========================================================================
     add_heading(doc, "2. Solução Proposta", level=1)
 
+    add_paragraph(
+        doc,
+        "Antes de detalhar a solução, é útil distinguir dois tipos de "
+        "sistema que costumam ser confundidos. Um ERP (Enterprise "
+        "Resource Planning, ou Planejamento de Recursos Empresariais) "
+        "cuida da gestão interna da empresa: registra pedidos, planeja a "
+        "produção, controla materiais e reúne as informações do negócio "
+        "em uma única base. Já um sistema de SCM (Supply Chain "
+        "Management, ou Gestão da Cadeia de Suprimentos) cuida do fluxo "
+        "de materiais e de informações entre a empresa e seus parceiros "
+        "externos (fornecedores, transportadores e clientes), tratando "
+        "de compras, visibilidade do abastecimento e coordenação com "
+        "fornecedores. De forma resumida: o ERP olha para dentro da "
+        "empresa; o SCM olha para a cadeia que a conecta ao mundo "
+        "externo.",
+        alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
+        first_line_indent=Cm(1.25),
+    )
+    add_paragraph(
+        doc,
+        "A PolymerForge já possui um ERP maduro, o IndustriaOS, mas não "
+        "conta com um sistema de SCM dedicado. Hoje, as funções de "
+        "cadeia de suprimentos estão embutidas de forma frágil dentro do "
+        "próprio ERP, no Módulo de Abastecimento Automático, que dispara "
+        "as compras mas não confirma, não registra e não acompanha o que "
+        "acontece do lado do fornecedor. É justamente essa lacuna de SCM "
+        "que dá origem às falhas silenciosas. O PolyLink foi concebido "
+        "para preencher essa lacuna: ele não substitui o ERP (que "
+        "continua sendo a fonte de verdade sobre pedidos e produção) "
+        "nem pretende ser uma suíte de SCM completa (não faz, por "
+        "exemplo, previsão de demanda ou gestão de estoques, funções que "
+        "nem se aplicam ao modelo just-in-time radical da empresa). O "
+        "PolyLink atua como uma camada especializada de execução e "
+        "visibilidade da cadeia de suprimentos no elo entre a empresa e "
+        "seus fornecedores, cobrindo exatamente o que o ERP não foi feito "
+        "para fazer: confirmar ativamente cada compra, registrar toda a "
+        "comunicação, medir a confiabilidade de cada fornecedor e rotear "
+        "pedidos automaticamente.",
+        alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
+        first_line_indent=Cm(1.25),
+    )
+
     add_heading(doc, "2.1 Funcionalidades", level=2)
     add_paragraph(
         doc,
         "O PolyLink é composto por sete funcionalidades principais, "
-        "todas ilustradas no protótipo entregue com este trabalho. A "
+        "todas ilustradas no protótipo entregue com este trabalho e "
+        "disponível para navegação em "
+        "https://projeto-si-prototipo.vercel.app/. A "
         "escolha das funcionalidades foi guiada pelo mapeamento das duas "
-        "dimensões do problema descritas no dossiê da empresa: "
+        "dimensões do problema descritas no material de contexto da "
+        "empresa: "
         "integrações frágeis com fornecedores e ausência de "
         "rastreabilidade e diagnóstico.",
         alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
@@ -491,12 +536,12 @@ def build_document() -> Document:
     add_heading(doc, "2.2 Questões técnicas", level=2)
     add_paragraph(
         doc,
-        "Do ponto de vista técnico, o PolyLink foi projetado para operar "
-        "como uma camada de middleware que se instala entre o "
-        "IndustriaOS e o mundo externo. Não substitui o ERP nem obriga "
-        "reescritas: o IndustriaOS continua sendo a fonte de verdade "
-        "sobre pedidos e materiais e passa a delegar ao PolyLink toda a "
-        "comunicação com fornecedores. A arquitetura recomendada é de "
+        "Do ponto de vista técnico, o PolyLink opera como uma camada de "
+        "middleware entre o IndustriaOS e as APIs dos fornecedores, sem "
+        "obrigar reescritas do ERP: o IndustriaOS continua sendo a fonte "
+        "de verdade sobre pedidos e materiais e passa a delegar ao "
+        "PolyLink a comunicação com fornecedores. A arquitetura "
+        "recomendada é de "
         "microsserviços hospedados na mesma nuvem privada onde o "
         "IndustriaOS já opera, garantindo baixa latência entre os "
         "sistemas internos e isolamento de dados sensíveis.",
@@ -507,7 +552,7 @@ def build_document() -> Document:
         doc,
         "Os recursos tecnológicos necessários podem ser divididos em "
         "cinco categorias. Em hardware, não há necessidade de servidores "
-        "físicos adicionais — toda a solução roda sobre a mesma "
+        "físicos adicionais: toda a solução roda sobre a mesma "
         "infraestrutura de nuvem privada já contratada. Em software, "
         "propõe-se um stack composto por um serviço de orquestração "
         "(Node.js ou Go) para os adaptadores e a máquina de estados de "
@@ -541,8 +586,8 @@ def build_document() -> Document:
         doc,
         "Um cuidado específico foi tomado em relação à compatibilidade. "
         "Como cada fornecedor expõe uma API distinta, os adapters do "
-        "PolyLink implementam um contrato interno padronizado — baseado "
-        "em JSON Schema versionado — e traduzem, campo a campo, as "
+        "PolyLink implementam um contrato interno padronizado (baseado "
+        "em JSON Schema versionado) e traduzem, campo a campo, as "
         "requisições e respostas. Sempre que um fornecedor publica uma "
         "nova versão de sua API, o PolyLink é capaz de detectar a "
         "divergência de schema por meio de validação contínua contra o "
@@ -574,8 +619,8 @@ def build_document() -> Document:
         "A segunda frente envolve o setor de compras. Historicamente, a "
         "escolha de fornecedores era feita por relacionamento comercial "
         "e negociação informal. Com o PolyLink, esses critérios são "
-        "complementados por indicadores objetivos — o health score, o "
-        "histórico de rupturas e o SLA cumprido — visíveis em painel. "
+        "complementados por indicadores objetivos (o health score, o "
+        "histórico de rupturas e o SLA cumprido) visíveis em painel. "
         "Será preciso treinar a equipe de compras para interpretar esses "
         "indicadores e utilizá-los em conversas com fornecedores. "
         "Recomenda-se um ciclo de reuniões trimestrais com cada "
@@ -621,8 +666,8 @@ def build_document() -> Document:
         "A solução impacta cinco grupos de pessoas com intensidades "
         "distintas. O primeiro grupo é o de compradores e gestores de "
         "abastecimento. Para eles, o PolyLink transforma um trabalho "
-        "hoje reativo — descobrir a ruptura, ligar para o fornecedor, "
-        "reconstruir o histórico — em um trabalho proativo, com "
+        "hoje reativo (descobrir a ruptura, ligar para o fornecedor, "
+        "reconstruir o histórico) em um trabalho proativo, com "
         "informações prévias, alertas precoces e apoio à decisão. "
         "Espera-se redução substancial da carga mental associada à "
         "gestão de crises e aumento da percepção de controle sobre a "
@@ -646,8 +691,8 @@ def build_document() -> Document:
     add_paragraph(
         doc,
         "O terceiro grupo é a equipe de TI e integrações. Se por um "
-        "lado essa equipe assume uma nova responsabilidade — a "
-        "curadoria dos adaptadores —, por outro passa a contar com uma "
+        "lado essa equipe assume uma nova responsabilidade (a "
+        "curadoria dos adaptadores), por outro passa a contar com uma "
         "estrutura padronizada, versionada e rastreável, que reduz "
         "drasticamente o tempo médio de diagnóstico e resolução de "
         "incidentes. Um debug que hoje leva horas em ligações e "
@@ -664,8 +709,8 @@ def build_document() -> Document:
         "priorizar, qual contrato renegociar, quando expandir a base de "
         "fornecedores homologados. Isso viabiliza retomar o plano de "
         "abertura da segunda unidade fabril em Campinas com maior "
-        "segurança. O quinto grupo, finalmente, são os clientes finais "
-        "— montadoras, oficinas e retíficas. Eles recebem informação "
+        "segurança. O quinto grupo, finalmente, são os clientes finais: "
+        "montadoras, oficinas e retíficas. Eles recebem informação "
         "mais fidedigna no Portal B2B, notificações proativas em caso "
         "de reroteamento e, no médio prazo, o retorno da confiabilidade "
         "nos prazos de 48 horas que motivou o relacionamento com a "
@@ -684,7 +729,7 @@ def build_document() -> Document:
         "sucesso e considera a compra concluída. No estado futuro, o "
         "processo passa a ter uma etapa formal de confirmação ativa: "
         "somente quando o fornecedor confirma o pedido de forma "
-        "assíncrona — via callback ou polling — o abastecimento é "
+        "assíncrona (via callback ou polling), o abastecimento é "
         "marcado como confirmado e a produção é liberada. Esse ajuste, "
         "aparentemente pequeno, elimina a categoria inteira de falhas "
         "silenciosas descritas no diagnóstico.",
@@ -694,14 +739,14 @@ def build_document() -> Document:
     add_paragraph(
         doc,
         "O processo de planejamento de produção passa a receber, do "
-        "PolyLink, um sinal explícito de disponibilidade de material — "
+        "PolyLink, um sinal explícito de disponibilidade de material; "
         "hoje esse sinal é inferido erroneamente do ERP. O processo de "
         "atendimento ao cliente ganha um novo caminho de resposta "
         "proativa: em caso de reroteamento, o cliente é notificado "
         "antes que perceba a instabilidade. O processo de gestão de "
         "fornecedores, que hoje se baseia em relacionamento e "
         "negociação informal, incorpora indicadores contratuais "
-        "objetivos — health score, taxa de sucesso, MTTR — e passa a "
+        "objetivos (health score, taxa de sucesso, MTTR) e passa a "
         "ter reuniões de revisão periódicas. Por fim, o processo de "
         "resposta a incidentes é criado ou remodelado com políticas de "
         "severidade, canais de escalação e responsáveis definidos, o "
@@ -734,7 +779,7 @@ def build_document() -> Document:
         "O PolyLink consome dados provenientes de três fontes principais. "
         "A primeira é o IndustriaOS: sempre que um pedido de cliente é "
         "confirmado no Portal B2B, o ERP dispara para o PolyLink os "
-        "dados do pedido — identificador, cliente, peça, especificação "
+        "dados do pedido: identificador, cliente, peça, especificação "
         "de material, quantidade de polímero necessária, prazo prometido "
         "e valor. Esses dados são a matriz do fluxo de abastecimento. "
         "A segunda fonte são as APIs dos fornecedores homologados: "
@@ -752,7 +797,7 @@ def build_document() -> Document:
         "Em segundo plano, o PolyLink também consome dados operacionais "
         "auxiliares, como o calendário oficial da empresa, feriados "
         "regionais que possam afetar o transporte de insumos e "
-        "informações de câmbio — relevantes para fornecedores "
+        "informações de câmbio, relevantes para fornecedores "
         "internacionais no futuro. Todos os dados são recebidos por "
         "integrações REST ou por eventos publicados em uma fila interna "
         "de mensagens, o que garante que picos momentâneos de tráfego "
@@ -767,7 +812,7 @@ def build_document() -> Document:
         "O processamento realizado pelo PolyLink combina quatro camadas "
         "lógicas. A primeira é a camada de tradução, na qual cada "
         "adapter recebe os dados internos padronizados e os traduz para "
-        "o formato esperado pela API do fornecedor — e vice-versa nas "
+        "o formato esperado pela API do fornecedor, e vice-versa nas "
         "respostas. A segunda é a máquina de estados de pedidos, que "
         "orquestra a transição entre os status pendente, enviado, "
         "reconhecido, em separação, em trânsito, entregue, falha e "
@@ -838,9 +883,9 @@ def build_document() -> Document:
         doc,
         "A quarta categoria é a informação voltada ao cliente. Em vez "
         "de “material a caminho” inferido a partir do ERP, o Portal B2B "
-        "passa a exibir estágios reais — pedido recebido, insumo "
+        "passa a exibir estágios reais (pedido recebido, insumo "
         "confirmado, insumo em trânsito, produção iniciada e peça a "
-        "caminho —, cada um deles alimentado por eventos vindos do "
+        "caminho), cada um deles alimentado por eventos vindos do "
         "PolyLink. Em caso de reroteamento, o cliente recebe "
         "notificação proativa e visualização da mudança de fornecedor "
         "sem impacto na especificação técnica. Assim, a informação "
@@ -861,9 +906,9 @@ def build_document() -> Document:
     add_paragraph(
         doc,
         "A cadeia de valor da PolymerForge 3D, adaptada do modelo "
-        "clássico de Porter, é composta por atividades primárias — "
-        "logística de insumos, operações de impressão 3D, logística de "
-        "saída, marketing e vendas e serviço pós-venda — e por "
+        "clássico de Porter, é composta por atividades primárias "
+        "(logística de insumos, operações de impressão 3D, logística de "
+        "saída, marketing e vendas e serviço pós-venda) e por "
         "atividades de apoio como infraestrutura, gestão de pessoas, "
         "desenvolvimento tecnológico e compras. A análise do impacto do "
         "PolyLink sobre essas atividades mostra que a solução age "
@@ -899,8 +944,8 @@ def build_document() -> Document:
         "versionados, e gestão de pessoas tem menor pressão de "
         "turnover em setores que hoje enfrentam picos de estresse. "
         "Como consequência, a solução aumenta a eficiência, reduz "
-        "custos ocultos — horas de linha ociosa, penalidades "
-        "contratuais, horas de investigação manual —, melhora a "
+        "custos ocultos (horas de linha ociosa, penalidades "
+        "contratuais, horas de investigação manual), melhora a "
         "qualidade percebida pelo cliente e libera capital humano para "
         "iniciativas de valor superior, como novos serviços de "
         "digitalização 3D e prototipagem consultiva.",
@@ -922,7 +967,7 @@ def build_document() -> Document:
         "é a PolymerForge quem passa a medir e cobrar melhorias, com "
         "dados objetivos para negociar preço, prazo e nível de serviço. "
         "Diante de novos entrantes e concorrentes diretos, o modelo "
-        "just-in-time radical — hoje enfraquecido pelas rupturas — "
+        "just-in-time radical (hoje enfraquecido pelas rupturas) "
         "volta a ser um diferencial defensável e difícil de imitar.",
         alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
         first_line_indent=Cm(1.25),
@@ -931,17 +976,17 @@ def build_document() -> Document:
         doc,
         "Os benefícios estratégicos esperados podem ser sintetizados em "
         "cinco pontos. Primeiro, a recuperação da taxa de entrega no "
-        "prazo aos patamares históricos de 94% já no primeiro ano de "
-        "operação. Segundo, a queda esperada de mais de 80% nas "
+        "prazo, buscando retornar aos patamares anteriores à crise "
+        "(94% em 2022). Segundo, a redução expressiva das "
         "paralisações não planejadas de linha. Terceiro, a viabilização "
         "financeira do plano de expansão da segunda unidade fabril em "
         "Campinas, agora sustentado por indicadores de confiabilidade. "
         "Quarto, a criação de uma capacidade defensiva que aumenta a "
         "resiliência a mudanças de fornecedores e a variações de "
         "mercado. Quinto, a formação de um ativo de dados que, ao longo "
-        "do tempo, alimenta melhorias sucessivas — de modelagem "
+        "do tempo, alimenta melhorias sucessivas (de modelagem "
         "preditiva de rupturas ao aprendizado sobre o comportamento de "
-        "cada fornecedor —, gerando vantagem competitiva sustentável.",
+        "cada fornecedor), gerando vantagem competitiva sustentável.",
         alignment=WD_ALIGN_PARAGRAPH.JUSTIFY,
         first_line_indent=Cm(1.25),
     )
@@ -1024,7 +1069,7 @@ def build_document() -> Document:
         "MuleSoft, 2024.",
         "ANTHROPIC. Claude Code Documentation. 2026. Disponível em: "
         "https://docs.anthropic.com/claude-code. Acesso em: jul. 2026.",
-        "POLYMERFORGE 3D. Dossiê A — Contexto e Problema. Documento "
+        "POLYMERFORGE 3D. Documento de Contexto e Problema. Material "
         "interno da disciplina SSC0120, ICMC-USP, 2026.",
     ]
     for ref in referencias:

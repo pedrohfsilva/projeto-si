@@ -7,7 +7,7 @@
 
 ## 1. Visão geral
 
-- **Empresa-cliente:** PolymerForge 3D (dossiê em `A-Polymerforge.pdf`).
+- **Empresa-cliente:** PolymerForge 3D (documento de contexto em `A-Polymerforge.pdf`).
 - **Problema recortado:** falhas silenciosas nas integrações com fornecedores de polímero + ausência de rastreabilidade.
 - **Solução proposta:** **PolyLink** — Plataforma de Integração e Rastreabilidade da Cadeia de Abastecimento.
 - **Data de entrega:** 06/07/2026 (Moodle).
@@ -63,7 +63,16 @@ Seções presentes, todas em Times New Roman 12pt, alinhamento justificado, espa
 - 5. Uso de Ferramentas de IA (declaração)
 - 6. Referências Bibliográficas
 
-Contagem: 4.559 palavras → ~15 pgs de conteúdo (dentro do intervalo 10–15).
+Contagem: 4.840 palavras. Verificado com LibreOffice: **17 páginas no total**,
+sendo ~14 de conteúdo (a Introdução começa na p.3 e as Referências na p.17),
+dentro do intervalo exigido de 10–15 páginas de conteúdo.
+
+> Nota de integridade: os únicos números do texto são os do próprio caso
+> (documento de contexto): entrega no prazo 94%→71%, 2,3 paralisações/mês, 14 h
+> por parada, 3 clientes com penalidade. Nenhum "resultado" da solução foi
+> inventado — os benefícios são descritos de forma qualitativa (é uma proposta,
+> ainda não medida). A seção 2 explica a diferença entre ERP e SCM e onde o
+> PolyLink se encaixa.
 
 ### Detalhes do protótipo (`entrega/prototipo/`)
 
@@ -94,7 +103,10 @@ Contagem: 4.559 palavras → ~15 pgs de conteúdo (dentro do intervalo 10–15).
 - Design: minimalista, fundo claro, um único acento azul, conteúdo resumido
   (1 página). **Não** contém a declaração de uso de IA — ela está no texto e no
   README, que é onde a descrição do trabalho exige.
-- Dimensões: 1080×1589 px (altura ajustada ao conteúdo, sem espaço sobrando).
+- Dimensões: 1080×1868 px (altura ajustada ao conteúdo, sem espaço sobrando).
+- Contém apenas dados reais do caso (rotulados "a situação hoje") + benefícios
+  esperados descritos de forma qualitativa, e um bloco explicando ERP × SCM ×
+  PolyLink. Sem números de resultado inventados.
 - Regerar PDF/PNG (macOS, com Google Chrome instalado):
   ```bash
   cd suporte/pdf-tool
@@ -127,7 +139,7 @@ descrição do trabalho a exige). Resumida:
 
 Nada é obrigatório — o trabalho está completo. Estas são só ideias caso queira polir:
 
-- [ ] Abrir o `.docx` no Word/LibreOffice e conferir a paginação real (a estimativa é ~15 pgs, mas depende da fonte instalada).
+- [x] Paginação real conferida com LibreOffice (17 pgs totais, ~14 de conteúdo). Ao abrir no Word, a fonte instalada pode deslocar 1 pg; o sumário reflete a paginação medida.
 - [ ] Rodar o protótipo (`npm install && npm run dev`) e navegar entre as 8 telas para tirar screenshots que podem servir na apresentação.
 - [ ] Se o professor exigir um único PDF do texto, exportar `texto_sistematizado.docx` → PDF pelo Word.
 - [ ] Ajustar detalhes visuais do infográfico editando `entrega/infografico.html` e rerodando os scripts em `suporte/pdf-tool/`.
