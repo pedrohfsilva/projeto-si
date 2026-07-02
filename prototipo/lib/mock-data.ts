@@ -364,29 +364,3 @@ export const alerts = [
   },
 ];
 
-export const kpiCadeiaValor = [
-  {
-    atividade: "Compras e abastecimento",
-    antes: "Reativo, dependente de investigação manual",
-    depois: "Roteamento automático + score de confiabilidade",
-    ganho: "-42% ordens revistas manualmente",
-  },
-  {
-    atividade: "Produção",
-    antes: "Paradas frequentes por falta de matéria-prima",
-    depois: "Programação só inicia após confirmação real",
-    ganho: "-83% paralisações não planejadas",
-  },
-  {
-    atividade: "Atendimento ao cliente",
-    antes: "Status fictício exibido no Portal B2B",
-    depois: "Portal alimentado por estado real do fornecedor",
-    ganho: "NPS +21 pontos em 2 trimestres",
-  },
-  {
-    atividade: "TI e integrações",
-    antes: "Debug manual por logs incompletos",
-    depois: "Rastro completo de payloads e retentativas",
-    ganho: "MTTR reduzido de 6h para 22min",
-  },
-];

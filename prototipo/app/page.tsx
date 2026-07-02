@@ -25,7 +25,6 @@ import {
   AlertTriangle,
   ArrowUpRight,
   CheckCircle2,
-  Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -181,7 +180,7 @@ export default function DashboardPage() {
               ver todos →
             </Link>
           </div>
-          <div className="overflow-hidden rounded-xl border border-surface-border">
+          <div className="overflow-x-auto rounded-xl border border-surface-border">
             <table className="w-full text-sm">
               <thead className="bg-white/[0.02] text-xs uppercase tracking-wide text-slate-400">
                 <tr>
@@ -256,30 +255,6 @@ export default function DashboardPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="card-p">
-        <div className="flex items-start gap-3">
-          <div className="grid h-9 w-9 place-content-center rounded-xl bg-brand-500/20 text-brand-200">
-            <Sparkles size={16} />
-          </div>
-          <div>
-            <h2 className="text-sm font-semibold">
-              Recomendações automáticas do PolyLink
-            </h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
-              <li>
-                • Reduzir o volume enviado ao fornecedor <strong>NorPolímeros</strong> em 60% e priorizar rotas alternativas para materiais TPU/PETG nos próximos 7 dias.
-              </li>
-              <li>
-                • Renegociar SLA com <strong>ChemPolymers</strong> — histórico dos últimos 14 dias indica latência crescente que compromete a janela de 48 h.
-              </li>
-              <li>
-                • Homologar <strong>PolyBrasil</strong> para nylon com fibra de carbono, ampliando margem de failover em pedidos de alto valor.
-              </li>
-            </ul>
           </div>
         </div>
       </section>

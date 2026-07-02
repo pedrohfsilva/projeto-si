@@ -28,3 +28,4 @@ O servidor sobe em `http://localhost:3000`.
 - `/config` — Governança e configurações do sistema
 
 Todos os dados são **mockados** em `lib/mock-data.ts`.
+# projeto-si-prototipo

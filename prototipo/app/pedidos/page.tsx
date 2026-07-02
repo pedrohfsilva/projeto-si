@@ -37,7 +37,7 @@ export default function PedidosPage() {
         </button>
       </div>
 
-      <div className="overflow-hidden card">
+      <div className="overflow-x-auto card">
         <table className="w-full text-sm">
           <thead className="bg-white/[0.02] text-xs uppercase tracking-wide text-slate-400">
             <tr>

@@ -109,7 +109,7 @@ export default function FornecedoresPage() {
           score abaixo de 60 são automaticamente rebaixados na ordem de
           prioridade de novos pedidos.
         </p>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+        <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
           <div className="rounded-lg border border-surface-border p-3">
             <div className="text-slate-400">Taxa de sucesso</div>
             <div className="mt-1 font-medium">Peso 40%</div>

@@ -15,13 +15,6 @@ const regras = [
   },
   {
     id: "R-002",
-    quando: "Pedido > R$ 5.000 e material for nylon+fibra",
-    entao: "Envia sempre para PolyBrasil (F-001) como rota preferencial",
-    prioridade: "Alta",
-    ativa: true,
-  },
-  {
-    id: "R-003",
     quando:
       "Latência p95 > 2s no fornecedor primário por 30 min consecutivos",
     entao: "Divide próximos pedidos 50/50 entre primário e secundário",
@@ -29,14 +22,7 @@ const regras = [
     ativa: true,
   },
   {
-    id: "R-004",
-    quando: "Cliente é da lista VIP (contrato SLA-Ouro)",
-    entao: "Adiciona validação síncrona extra antes de agendar máquina",
-    prioridade: "Média",
-    ativa: true,
-  },
-  {
-    id: "R-005",
+    id: "R-003",
     quando:
       "Fornecedor mudou versão da API sem aviso (diff de schema detectado)",
     entao: "Congela envios para o fornecedor até revalidação do adapter",
@@ -133,7 +119,7 @@ export default function RoteamentoPage() {
             <Settings2 size={14} /> Nova regra
           </button>
         </div>
-        <div className="mt-4 overflow-hidden rounded-xl border border-surface-border">
+        <div className="mt-4 overflow-x-auto rounded-xl border border-surface-border">
           <table className="w-full text-sm">
             <thead className="bg-white/[0.02] text-xs uppercase tracking-wide text-slate-400">
               <tr>

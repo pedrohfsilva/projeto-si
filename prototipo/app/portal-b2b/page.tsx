@@ -102,7 +102,8 @@ export default function PortalB2BPage() {
                   </p>
                 </div>
               ) : (
-                <div className="mt-6 grid grid-cols-5 gap-3">
+                <div className="mt-6 overflow-x-auto">
+                  <div className="grid grid-cols-5 gap-3 min-w-[400px]">
                   {estagios.map((e, i) => {
                     const done = i <= estagio;
                     const active = i === estagio;
@@ -131,6 +132,7 @@ export default function PortalB2BPage() {
                       </div>
                     );
                   })}
+                </div>
                 </div>
               )}
 

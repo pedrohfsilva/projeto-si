@@ -3,7 +3,7 @@
 import { AppShell } from "@/components/AppShell";
 import { SeverityBadge } from "@/components/StatusBadge";
 import { alerts } from "@/lib/mock-data";
-import { BellRing, MessageCircle, Timer } from "lucide-react";
+import { MessageCircle, Timer } from "lucide-react";
 
 const canais = [
   { nome: "Slack #ops-abastecimento", conectado: true },
@@ -80,47 +80,21 @@ export default function AlertasPage() {
           </div>
         </div>
 
-        <div className="space-y-4">
-          <div className="card-p">
-            <h2 className="text-sm font-semibold">Canais conectados</h2>
-            <ul className="mt-3 space-y-2 text-sm">
-              {canais.map((c) => (
-                <li
-                  key={c.nome}
-                  className="flex items-center justify-between rounded-lg border border-surface-border bg-black/20 px-3 py-2"
-                >
-                  <span>{c.nome}</span>
-                  <span className="badge bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">
-                    conectado
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="card-p">
-            <div className="flex items-center gap-2">
-              <BellRing size={14} className="text-brand-300" />
-              <h2 className="text-sm font-semibold">Cobertura de plantão</h2>
-            </div>
-            <p className="mt-1 text-xs text-slate-400">
-              Escalação escalonada garante que nenhum alerta P1 fique sem
-              reconhecimento por mais de 5 minutos.
-            </p>
-            <div className="mt-3 space-y-2 text-xs">
-              <div className="flex items-center justify-between rounded-lg border border-surface-border bg-black/20 px-3 py-2">
-                <span>1º nível — Marcela Andrade</span>
-                <span className="text-slate-400">on-call</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border border-surface-border bg-black/20 px-3 py-2">
-                <span>2º nível — Ricardo Mello</span>
-                <span className="text-slate-400">standby</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border border-surface-border bg-black/20 px-3 py-2">
-                <span>3º nível — Diretoria Industrial</span>
-                <span className="text-slate-400">escalação P1</span>
-              </div>
-            </div>
-          </div>
+        <div className="card-p">
+          <h2 className="text-sm font-semibold">Canais conectados</h2>
+          <ul className="mt-3 space-y-2 text-sm">
+            {canais.map((c) => (
+              <li
+                key={c.nome}
+                className="flex items-center justify-between rounded-lg border border-surface-border bg-black/20 px-3 py-2"
+              >
+                <span>{c.nome}</span>
+                <span className="badge bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">
+                  conectado
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

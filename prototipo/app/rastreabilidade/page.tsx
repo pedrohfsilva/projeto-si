@@ -53,7 +53,7 @@ export default function RastreabilidadePage() {
               {pedido.peca} · {pedido.material} · {pedido.quantidadeKg} kg
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <OrderStatusBadge status={pedido.status} />
             <button className="btn-ghost border border-surface-border">
               <RefreshCcw size={13} /> Atualizar
@@ -64,7 +64,7 @@ export default function RastreabilidadePage() {
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+        <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
           <div className="rounded-lg border border-surface-border p-3">
             <div className="text-slate-400">Correlation ID</div>
             <div className="mt-1 font-mono">req_2026-07-01_9c4f8b</div>
